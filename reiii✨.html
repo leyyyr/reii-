@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sasamahan mo ko sa tuesday dibaa?</title>
+<style>
+  body {
+    background-color: #fff5f8;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 150px;
+  }
+
+  h1 {
+    font-size: 2em;
+    color: #ff7ba3;
+  }
+
+  button {
+    background-color: #ffd1dc;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #ff99b9;
+  }
+
+  #hindiBtn {
+    position: absolute;
+  }
+
+  #message {
+    font-size: 2em;
+    color: #ff6392;
+    margin-top: 30px;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>✨ sasamahan mo ko sa tuesday dibaa?✨</h1>
+<button id="ooBtn">oo 💖</button>
+<button id="hindiBtn">hindi 🙈</button>
+<div id="message">ayaw mo na ko kasama nyan kung hindi(つ﹏⊂)  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  const hindiBtn = document.getElementById("hindiBtn");
+  const ooBtn = document.getElementById("ooBtn");
+  const message = document.getElementById("message");
+
+  // Make the "hindi" button move randomly when hovered
+  hindiBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - hindiBtn.clientWidth);
+    const y = Math.random() * (window.innerHeight - hindiBtn.clientHeight);
+    hindiBtn.style.left = `${x}px`;
+    hindiBtn.style.top = `${y}px`;
+  });
+
+  // When "oo" is clicked
+  ooBtn.addEventListener("click", () => {
+    message.style.display = "block";
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.6 },
+      colors: ['#ff7ba3', '#ffd1dc', '#fff5f8', '#ffb6c1']
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
